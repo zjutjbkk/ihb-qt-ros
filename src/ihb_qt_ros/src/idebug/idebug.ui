@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IDebug</class>
+ <widget class="QWidget" name="IDebug">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1154</width>
+    <height>698</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #f5f5f5;
+}
+
+QGroupBox {
+    font-weight: bold;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    background-color: white;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+    color: #3498db;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#pushButton_stop {
+    background-color: #e74c3c;
+}
+
+QPushButton#pushButton_stop:hover {
+    background-color: #c0392b;
+}
+
+QPushButton#pushButton_reset {
+    background-color: #95a5a6;
+}
+
+QPushButton#pushButton_reset:hover {
+    background-color: #7f8c8d;
+}
+
+QPushButton#pushButton_confirm {
+    background-color: #27ae60;
+}
+
+QPushButton#pushButton_confirm:hover {
+    background-color: #229954;
+}
+
+QPushButton#pushButton_cancel {
+    background-color: #e67e22;
+}
+
+QPushButton#pushButton_cancel:hover {
+    background-color: #d35400;
+}
+
+QDoubleSpinBox {
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: white;
+}
+
+QLineEdit {
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: white;
+}
+
+QComboBox {
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: white;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    margin: 2px 0;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #2980b9;
+}
+
+QTextEdit, QPlainTextEdit {
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+QLabel {
+    color: #2c3e50;
+    font-size: 12px;
+}
+
+QCheckBox {
+    color: #2c3e50;
+}
+
+QTabWidget::pane {
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    background-color: white;
+}
+
+QTabBar::tab {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 8px 16px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: #3498db;
+    color: white;
+}
+
+QTabBar::tab:hover {
+    background-color: #d5dbdb;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="IDebugTab">
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="tab_pid_debug">
+      <attribute name="title">
+       <string>肌肉PID调试</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_pid_debug">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="PIDDebugWidget" name="widget_pid_debug" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ItvTab">
+      <attribute name="title">
+       <string>气阀调试(串口)</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,1">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,1,1" columnminimumwidth="0,0,0">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>气阀数量</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEditItvNum"/>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="pushButton">
+             <property name="minimumSize">
+              <size>
+               <width>400</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #7f8c8d;
+}
+
+QPushButton:pressed {
+    background-color: #707b7c;
+}</string>
+             </property>
+             <property name="text">
+              <string>急停(空格)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="updateStatus">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>更新状态(U)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <widget class="QScrollArea" name="scrollArea">
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="Itvs">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>745</width>
+                <height>589</height>
+               </rect>
+              </property>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <widget class="QPushButton" name="actionStartButton">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #229954;
+}
+
+QPushButton:pressed {
+    background-color: #1e8449;
+}</string>
+             </property>
+             <property name="text">
+              <string>开始</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="circleCheckBox">
+             <property name="text">
+              <string>循环</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>定时发送(ms)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="commandTime">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="CommandTextEdit" name="commandText">
+             <property name="lineWrapMode">
+              <enum>QPlainTextEdit::NoWrap</enum>
+             </property>
+             <property name="plainText">
+              <string>D100
+A00B1000 // 通道0设置为1000
+A88B0000 // 全部置零
+A99B0000 // 读取ADC</string>
+             </property>
+             <property name="textInteractionFlags">
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+             </property>
+             <property name="centerOnScroll">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="recordButton">
+             <property name="text">
+              <string>录制当前动作</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QCheckBox" name="skipZeroCheck">
+             <property name="text">
+              <string>跳过0值</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QPushButton" name="clearButton">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #d35400;
+}
+
+QPushButton:pressed {
+    background-color: #ba4a00;
+}</string>
+             </property>
+             <property name="text">
+              <string>清空</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QPushButton" name="helpButton">
+             <property name="text">
+              <string>帮助</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QPushButton" name="readButton">
+             <property name="text">
+              <string>读取</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QPushButton" name="saveButton">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #229954;
+}
+
+QPushButton:pressed {
+    background-color: #1e8449;
+}</string>
+             </property>
+             <property name="text">
+              <string>保存</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>示教</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_teach">
+       <item>
+        <widget class="teach" name="widget_2" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CommandTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>src/idebug/commandtextedit.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>teach</class>
+   <extends>QWidget</extends>
+   <header>src/idebug/teach.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PIDDebugWidget</class>
+   <extends>QWidget</extends>
+   <header>src/idebug/piddebugwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

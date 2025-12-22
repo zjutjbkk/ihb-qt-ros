@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Control</class>
+ <widget class="QWidget" name="Control">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>996</width>
+    <height>771</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Control</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #f5f5f5;
+}
+
+QGroupBox {
+    font-weight: bold;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    background-color: white;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+    color: #3498db;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#pushButton_stop {
+    background-color: #e74c3c;
+}
+
+QPushButton#pushButton_stop:hover {
+    background-color: #c0392b;
+}
+
+QPushButton#pushButton_reset {
+    background-color: #95a5a6;
+}
+
+QPushButton#pushButton_reset:hover {
+    background-color: #7f8c8d;
+}
+
+QLineEdit {
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: white;
+}
+
+QComboBox {
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: white;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    margin: 2px 0;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #2980b9;
+}
+
+QTextEdit, QPlainTextEdit {
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+QLabel {
+    color: #2c3e50;
+    font-size: 12px;
+}
+
+QCheckBox {
+    color: #2c3e50;
+    font-size: 12px;
+}
+
+QTabWidget::pane {
+    border: 1px solid #bdc3c7;
+    background-color: white;
+}
+
+QTabBar::tab {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 8px 16px;
+    border: 1px solid #bdc3c7;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+QTabBar::tab:selected {
+    background-color: #3498db;
+    color: white;
+}
+
+QTabBar::tab:hover {
+    background-color: #d5dbdb;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QTabWidget" name="ControlTabWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tab_statics">
+      <attribute name="title">
+       <string>静力学控制</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="StaticsControl" name="widget_statics" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_pid">
+      <attribute name="title">
+       <string> PID控制</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_pid">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="PIDControl" name="widget_pid" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>StaticsControl</class>
+   <extends>QWidget</extends>
+   <header>src/control/staticscontrol.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PIDControl</class>
+   <extends>QWidget</extends>
+   <header>src/control/pidcontrol.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

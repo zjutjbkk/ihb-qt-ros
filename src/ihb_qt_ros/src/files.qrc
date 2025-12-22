@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>files/ico/icons8_cancel_32px_2.png</file>
+        <file>files/ico/icons8_customer_32px_2.png</file>
+        <file>files/ico/icons8_delete_5.ico</file>
+        <file>files/ico/icons8_delete_32px_6.png</file>
+        <file>files/ico/icons8_down_button_32px_3.png</file>
+        <file>files/ico/icons8_home_1.ico</file>
+        <file>files/ico/icons8_home_32px_6.png</file>
+        <file>files/ico/icons8_menu_1.ico</file>
+        <file>files/ico/icons8_menu_32px_6.png</file>
+        <file>files/ico/icons8_search_32px_4.png</file>
+        <file>files/ico/icons8_settings_32px_4.png</file>
+        <file>files/ico/icons8_subtract_1.ico</file>
+        <file>files/ico/icons8_subtract_32px_6.png</file>
+        <file>files/ihb.qss</file>
+        <file>files/ico/x.ico</file>
+        <file>files/ico/x.png</file>
+        <file>files/idebug.qss</file>
+        <file>qt/etc/qt.conf</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LiveShow</class>
+ <widget class="QWidget" name="LiveShow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>996</width>
+    <height>771</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #f5f5f5;
+}
+
+QGroupBox {
+    font-weight: bold;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    background-color: white;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+    color: #3498db;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#pushButton_stop {
+    background-color: #e74c3c;
+}
+
+QPushButton#pushButton_stop:hover {
+    background-color: #c0392b;
+}
+
+QPushButton#pushButton_reset {
+    background-color: #95a5a6;
+}
+
+QPushButton#pushButton_reset:hover {
+    background-color: #7f8c8d;
+}
+
+QLineEdit {
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: white;
+}
+
+QComboBox {
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: white;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    margin: 2px 0;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #2980b9;
+}
+
+QTextEdit, QPlainTextEdit {
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+QLabel {
+    color: #2c3e50;
+    font-size: 12px;
+}
+
+QCheckBox {
+    color: #2c3e50;
+    font-size: 12px;
+}
+
+QTabWidget::pane {
+    border: 1px solid #bdc3c7;
+    background-color: white;
+}
+
+QTabBar::tab {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 8px 16px;
+    border: 1px solid #bdc3c7;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+QTabBar::tab:selected {
+    background-color: #3498db;
+    color: white;
+}
+
+QTabBar::tab:hover {
+    background-color: #d5dbdb;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>10</number>
+   </property>
+   <property name="topMargin">
+    <number>10</number>
+   </property>
+   <property name="rightMargin">
+    <number>10</number>
+   </property>
+   <property name="bottomMargin">
+    <number>10</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="cameraControlGroup">
+     <property name="title">
+      <string>话题订阅控制</string>
+     </property>
+     <layout class="QVBoxLayout" name="controlMainLayout">
+      <item>
+       <layout class="QHBoxLayout" name="rawImageControlLayout">
+        <item>
+         <widget class="QLabel" name="label_raw_image_topic">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>原始图像话题:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_raw_image_topic">
+          <property name="text">
+           <string>/camera/camera/color/image_raw</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_subscribe_raw_image">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>开始订阅</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="detectionControlLayout">
+        <item>
+         <widget class="QLabel" name="label_detection_topic">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>检测结果话题:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_detection_topic">
+          <property name="text">
+           <string>/detection_result</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_subscribe_detection">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>开始订阅</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="displayControlLayout">
+        <item>
+         <widget class="QLabel" name="label_display_control">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>图像显示控制:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_toggle_camera">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>开始接收</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="imagesHorizontalLayout" stretch="1,1">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QGroupBox" name="rawImageGroup">
+       <property name="title">
+        <string>原始图像</string>
+       </property>
+       <layout class="QVBoxLayout" name="rawImageLayout">
+        <item>
+         <widget class="QLabel" name="label_raw_image_display">
+          <property name="minimumSize">
+           <size>
+            <width>320</width>
+            <height>240</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2c3e50;
+    border: 2px solid #27ae60;
+    border-radius: 5px;
+    color: #ecf0f1;
+    font-size: 14px;
+}</string>
+          </property>
+          <property name="text">
+           <string>等待原始图像...</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_raw_image_info">
+          <property name="text">
+           <string>图像信息: 未接收</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="detectionImageGroup">
+       <property name="title">
+        <string>检测结果</string>
+       </property>
+       <layout class="QVBoxLayout" name="detectionImageLayout">
+        <item>
+         <widget class="QLabel" name="label_detection_image">
+          <property name="minimumSize">
+           <size>
+            <width>320</width>
+            <height>240</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2c3e50;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    color: #ecf0f1;
+    font-size: 14px;
+}</string>
+          </property>
+          <property name="text">
+           <string>等待检测结果...</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_detection_image_info">
+          <property name="text">
+           <string>图像信息: 未接收</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

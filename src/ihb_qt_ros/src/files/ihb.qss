@@ -1,0 +1,45 @@
+/* https://doc.qt.io/qt-5/stylesheet-reference.html */
+
+
+QTabBar#MainTabBar::tab {
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    margin-right: 10; */
+    width: 250;
+}
+/* QTabBar#IDebugTabBar::tab {
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    margin-right: 10; 
+    width: 248;
+} */
+
+/* QTabBar::tab:!selected {
+    background-color: #303030;
+}
+
+QTabBar::tab:selected {
+    background-color: #929697;
+} */
+
+
+
+
+
+/* QTabBar {
+    background-color: rgb(106, 110, 112);
+} */
+
+
+/* QTabWidget::pane {
+    border: none
+} */
+
+/* QTabBar */
+
+
+/* QPushButton#pushButton {
+    border: 3px solid #ffee6f;
+} */

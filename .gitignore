@@ -1,0 +1,9 @@
+*build*
+*install
+*log
+*.vscode
+use.workspace.user
+.qtc_*
+*.xml
+*.XML
+*.json
