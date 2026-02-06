@@ -34,7 +34,8 @@ int main(int argc, char *argv[])
     qRegisterMetaType<ihb_msgs::msg::ArmTarget>("ihb_msgs::msg::ArmTarget");
 
     // 设置ROS_DOMAIN_ID
-    putenv((char*)"ROS_DOMAIN_ID=77");
+    qputenv("ROS_DOMAIN_ID", "22");
+
 
     // 初始化ROS节点
     rclcpp::init(argc, argv);
